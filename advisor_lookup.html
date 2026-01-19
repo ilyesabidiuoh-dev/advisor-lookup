@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>الاستعلام عن المرشد الأكاديمي</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  direction: rtl;
+  text-align: center;
+  margin-top: 50px;
+}
+input, button {
+  padding: 10px;
+  font-size: 16px;
+}
+</style>
+</head>
+<body>
+
+<h2>الاستعلام عن المرشد الأكاديمي</h2>
+<p>أدخل الرقم الجامعي</p>
+
+<input type="text" id="sid" placeholder="الرقم الجامعي">
+<button onclick="lookup()">بحث</button>
+
+<p id="result"></p>
+
+<script>
+const data = {
+  "202530966": "خالد عيسى عبدالقادر الشريف",
+  "202530967": "خالد عيسى عبدالقادر الشريف",
+  "202530969": "خالد عيسى عبدالقادر الشريف"
+  /* ⚠️ سنكمل بقية الأسماء لاحقًا */
+};
+
+function lookup() {
+  const sid = document.getElementById("sid").value.trim();
+  document.getElementById("result").innerText =
+    data[sid] ? "اسم المرشد الأكاديمي: " + data[sid]
+              : "لم يتم العثور على الرقم الجامعي";
+}
+</script>
+
+</body>
+</html>
